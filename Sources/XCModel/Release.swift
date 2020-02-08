@@ -35,7 +35,7 @@ public enum Release: Codable {
         } else if let v = try container.decodeIfPresent(Int.self, forKey: .dp) {
             self = .dp(v)
         } else {
-            fatalError("Unreachable")
+            self = .gm
         }
     }
     
