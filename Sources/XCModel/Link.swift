@@ -9,10 +9,12 @@
 import Foundation
 
 public struct Link: Codable {
+    public let name: String?
     public let url: URL
     public let sizeMB: Int?
     
-    public init(_ string: String, _ size: Int? = nil) {
+    public init(_ string: String, _ size: Int? = nil, name: String? = nil) {
+        self.name = name
         self.url = URL(string: string)!
         self.sizeMB = size
     }
