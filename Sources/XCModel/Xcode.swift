@@ -28,3 +28,6 @@ public struct Xcode: Codable {
         self.links = links
     }
 }
+
+// MARK: - Protocol Identifiable
+extension Xcode: Identifiable { }
