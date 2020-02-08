@@ -48,4 +48,12 @@ public struct SDKs: Codable {
         self.watchOS = watchOS?.isEmpty == true ? nil : watchOS
         self.tvOS = tvOS?.isEmpty == true ? nil : tvOS
     }
+    
+    public var count: Int {
+        let numiOS = iOS?.count ?? 0
+        let numMacOS = macOS?.count ?? 0
+        let numTvOS = tvOS?.count ?? 0
+        let numWatchOS = watchOS?.count ?? 0
+        return numiOS + numMacOS + numTvOS + numWatchOS
+    }
 }
