@@ -20,4 +20,26 @@ public struct YMD: Codable {
     public init(_ year: Int, _ month: Int, _ day: Int) {
         self.year = year; self.month = month; self.day = day
     }
+    
+    public var components: DateComponents {
+        var components = DateComponents()
+        components.calendar = Calendar.current
+        components.year = year
+        components.month = month
+        components.day = day
+        return components
+    }
+}
+
+// MARK: - Protocol CustomStringConvertible
+extension YMD: CustomStringConvertible {
+    public var description: String {
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("MMM dd,yyyy")
+        guard let date = calendar.date(from: components) else {
+            return "Invalid Date"
+        }
+        return formatter.string(from: date)
+    }
 }

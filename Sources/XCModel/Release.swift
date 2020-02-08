@@ -49,3 +49,19 @@ public enum Release: Codable {
         }
     }
 }
+
+// MARK: - CustomStringConvertible
+extension Release: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .beta(let v):
+            return "Beta \(v)"
+        case .gm:
+            return "GM"
+        case .gmSeed(let v):
+            return "GM Seed \(v)"
+        case .dp(let v):
+            return "DP \(v)"
+        }
+    }
+}
