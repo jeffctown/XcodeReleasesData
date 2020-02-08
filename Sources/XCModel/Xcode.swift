@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Xcode: Codable {
+    public var id: Int?
     public let name: String
     public let version: Version
     public let date: YMD
