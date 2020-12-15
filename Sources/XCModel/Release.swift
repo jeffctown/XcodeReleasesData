@@ -70,6 +70,10 @@ extension Release: CustomStringConvertible {
             return "GM Seed \(v)"
         case .dp(let v):
             return "DP \(v)"
+        case .release:
+            return "Release"
+        case .rc(let v):
+            return "RC \(v)"
         }
     }
 }
